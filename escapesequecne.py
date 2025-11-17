@@ -1,0 +1,7 @@
+# print("hello \n guys")
+# print("\n hello")
+# print("hi \t guys")
+# print("hdi \r friends")
+# print("hi \b friends")
+name = input("enter your name")
+print(f"Good morning {name}")
