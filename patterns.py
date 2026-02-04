@@ -117,3 +117,5 @@ print("new triangel from herer"
 #     for j in range(1,i):
 #         print(chr(64+j),end="")
 #     print()
+
+

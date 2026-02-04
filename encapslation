@@ -1,0 +1,96 @@
+# ⭐ Types of Encapsulation in Python
+# 1️⃣ Public Members
+
+# Accessible from anywhere.
+
+class Student:
+    def __init__(self, name):
+        self.name = name  # public variable
+
+s = Student("Raman")
+print(s.name)
+
+# 2️⃣ Protected Members
+
+# Prefix with _single underscore → _variable
+# It can be accessed, but treated as "protected".
+
+class Student:
+    def __init__(self):
+        self._marks = 90  # protected variable
+
+class Child(Student):
+    def show(self):
+        print("Marks:", self._marks)
+
+c = Child()
+c.show()
+
+# 3️⃣ Private Members
+
+# Prefix with __double underscore → __variable
+# Cannot be accessed directly outside the class.
+
+class Bank:
+    def __init__(self):
+        self.__balance = 5000  # private variable
+
+    def show_balance(self):
+        print("Your Balance:", self.__balance)
+
+b = Bank()
+b.show_balance()
+
+
+# ❌ Not allowed:
+
+print(b.__balance)
+
+# ⭐ Private Methods Example
+class Test:
+    def __secret(self):
+        print("This is a private method")
+
+    def access(self):
+        self.__secret()
+
+t = Test()
+t.access()
+
+# ⭐ Encapsulation in Real Life Example
+# Bank ATM
+
+# You enter your PIN
+
+# But ATM never shows your balance variable directly
+
+# Balance is protected inside a class
+
+# Only methods like withdraw() or balance_check() can access it
+
+# 🎯 Why Encapsulation?
+
+# ✔ Hides data
+# ✔ Increases security
+# ✔ Prevents accidental modification
+# ✔ Maintains clean code
+# ✔ Allows controlled access using getters and setters
+
+# ⭐ Getters & Setters (Important Interview Question)
+class Employee:
+def __init__(self):
+        self.__salary = 50000
+
+    def get_salary(self):
+        return self.__salary
+
+    def set_salary(self, value):
+        if value > 0:
+            self.__salary = value
+        else:
+            print("Invalid salary")
+
+emp = Employee()
+print(emp.get_salary())
+emp.set_salary(60000)
+print(emp.get_salary())
